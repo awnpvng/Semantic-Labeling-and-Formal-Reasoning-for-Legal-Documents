@@ -57,6 +57,54 @@ The pipeline processes raw legal text and outputs a queryable knowledge graph:
 - **Languages**: Python, Prolog
 
 ---
+## 📁 Cấu Trúc Dự Án
+
+```
+CS229_Privacy_Semantic/
+│
+├── data/                          # Dữ liệu đầu vào
+│   ├── paragraph.txt              # Đoạn văn Privacy Policy (1,682 ký tự)
+│   └── question.txt               # 8 câu hỏi truy vấn
+│
+├── wsd/                           # Word Sense Disambiguation
+│   ├── data/
+│   │   ├── reference_annotations.csv  # Ground truth (82 từ)
+│   │   └── semcor_instances.jsonl     # Training data (73MB)
+│   ├── models/
+│   │   └── bert_semcor_model.pkl      # Trained BERT+SVM (48MB)
+│   ├── results/
+│   │   ├── mfs_eval.json              # MFS evaluation
+│   │   ├── bert_eval.json             # BERT evaluation
+│   │   ├── predictions_mfs.json       # MFS predictions
+│   │   └── predictions_bert_semcor.json
+│   ├── baseline_mfs.py            # MFS Baseline script
+│   ├── prepare_semcor.py          # Chuẩn bị SemCor data
+│   ├── train_bert.py              # Train BERT+SVM
+│   └── predict_and_eval.py        # Evaluate BERT+SVM
+│
+├── kb/                            # Knowledge Base
+│   ├── kb.pl                      # Prolog facts (26 facts)
+│   ├── kb_aug.pl                  # WordNet augmentation (271 facts)
+│   └── kb_fol.md                  # First-Order Logic representation
+│
+├── results/                       # Kết quả truy vấn
+│   ├── queries.pl                 # Prolog queries
+│   └── queries.md                 # Query documentation
+│
+├── augment/                       # WordNet Augmentation
+│   └── wordnet_augment.py         # Script bổ sung synonym/hypernym
+│
+├── demo/                          # Web Demo (FastAPI)
+│   ├── main.py                    # FastAPI backend
+│   ├── templates/
+│   │   └── index.html             # Main template
+│   └── static/
+│       ├── styles.css             # CSS styling
+│       └── app.js                 # JavaScript logic
+│
+├── requirements.txt               # Python dependencies
+└── README.md                      # This file
+```
 
 ## 📊 Evaluation & Deep NLP Insights
 
