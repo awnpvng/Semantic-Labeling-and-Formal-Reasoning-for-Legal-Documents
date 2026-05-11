@@ -11,8 +11,12 @@
 This project tackles a highly complex challenge in Natural Language Processing (NLP): translating dense legal texts (specifically, **Article 3 of the EU AI Act**) into **First-Order Logic (FOL)**. By adopting a **Neuro-Symbolic AI** approach, this system bridges the gap between deep contextual language understanding (via Transformers) and deterministic, exact automated reasoning (via Prolog). 
 
 Most modern AI systems rely purely on statistical/deep learning models. This project demonstrates advanced capabilities in **Knowledge Representation**, **Ontological Engineering**, and **Hybrid AI**, proving that deep NLP expertise extends far beyond simple API calls.
+* **Team Members:**
+* Mai Thái Bình - 23520158
+* Nguyễn Xuân An - 23520023 
+* Trương Hoàng Thành An - 23520032
 
-## 🧠 Core NLP & AI Competencies Demonstrated
+## Core NLP & AI Competencies Demonstrated
 
 - **Domain-Specific Language Modeling**: Leveraged `legal-bert-base-uncased` to accurately capture the semantic nuances and highly specific context of legal jargon, outperforming generic language models in the legal domain.
 - **Neuro-Symbolic Integration**: Successfully combined the robust representation power of neural networks (BERT) with the interpretability and exact reasoning of symbolic AI (Prolog).
@@ -22,7 +26,7 @@ Most modern AI systems rely purely on statistical/deep learning models. This pro
 
 ---
 
-## 🏗️ System Architecture & Pipeline
+## System Architecture & Pipeline
 
 The pipeline processes raw legal text and outputs a queryable knowledge graph:
 
@@ -48,7 +52,7 @@ The pipeline processes raw legal text and outputs a queryable knowledge graph:
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Deep Learning / NLP Models**: HuggingFace Transformers (`nlpaueb/legal-bert-base-uncased`)
 - **Symbolic AI / Logic Programming**: Prolog
@@ -57,7 +61,7 @@ The pipeline processes raw legal text and outputs a queryable knowledge graph:
 - **Languages**: Python, Prolog
 
 ---
-## 📁 Cấu Trúc Dự Án
+## Folder structure
 
 ```
 CS229_Privacy_Semantic/
@@ -106,7 +110,7 @@ CS229_Privacy_Semantic/
 └── README.md                      # This file
 ```
 
-## 📊 Evaluation & Deep NLP Insights
+## Evaluation & Deep NLP Insights
 
 The WSD module was rigorously evaluated against a manually annotated Gold Standard dataset of **80 critical legal tokens**.
 
@@ -115,14 +119,14 @@ The WSD module was rigorously evaluated against a manually annotated Gold Standa
 | **MFS Baseline** | **71.25%** | Utilizes WordNet's primary sense |
 | **Legal-BERT** | **65.00%** | Contextual embedding distance |
 
-### 💡 Insight on Results: The "MFS Phenomenon"
+### Insight on Results: The "MFS Phenomenon"
 To an untrained eye, the neural model underperforming the baseline might seem counterintuitive. However, in advanced NLP, it is a well-documented phenomenon that the **Most Frequent Sense (MFS)** is an exceptionally strong baseline for WSD tasks, especially in highly specialized domains with skewed sense distributions. 
 
 Legal texts are deliberately drafted to use words in their most rigid, standard definitions to avoid ambiguity. Therefore, the MFS naturally aligns with legal drafting principles. Contextual models (like BERT) without fine-tuning on a massive, domain-specific sense-annotated corpus can sometimes introduce variance by "overthinking" the context. Recognizing and explaining this nuance is what separates empirical AI engineering from blind model deployment.
 
 ---
 
-## 🚀 Future Directions
+## Future Directions
 
 - **Automated Semantic Parsing**: Training a Seq2Seq model (like T5) to automatically translate legal text to FOL predicates, replacing the manual translation step.
 - **Graph Neural Networks (GNNs)**: Embedding the generated Prolog knowledge graph into a continuous vector space using GNNs for approximate reasoning over incomplete legal texts.
